@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://kit.fontawesome.com/b772031a0c.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+ 
+
+    <title>Login | Mission Fitness & Food Supplements</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img id="logo" class="img-fluid" src="images/logo.png" alt="">
+                <img id="mlogo" class="img-fluid" src="images/logo1.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cart" href="/cart"><span id="cartCounter" style="color:gold ;margin-right: 4px;"><%=session.cart ? session.cart.totalQty :'' %></span><i class="fas fa-shopping-cart"></i></a>
+                    </li>
+                </ul>
+
+            </div>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-sm btn-primary" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+
+    <div class="login">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm loginpage">
+                    <h1 class="text-center loginh1">
+                        Login
+                    </h1>
+                    <%- include('messages') %>
+                    <form action="/login" method="POST">
+                        
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">User name</label>
+                            <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" name="password"class="form-control" id="exampleInputPassword1">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary loginsub">Submit</button>
+                    </form>
+
+                    <p class="regtxt"> <a href="/forgot">Forget Password</a> </p>
+
+                    <p class="regtxt register-lg"> <a href="/register"> Register</a> </p>
+                    
+                    <p class="regtxt register-text" >Register Your Self with Mission Fitness</p>
+
+
+                  
+                  
+
+
+                </div>
+                <div class="col-sm">
+                    <img class="img-fluid loginimg" src="images/login.jpg" alt="">
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+  
+
+    <!-- Featured Products  -->
+
+
+
+
+
+
+
+    <div class="footer">
+        <div class="container rowfooter ">
+            <div class="row">
+                <div class="col-sm">
+                    <img class="img-fluid" src="images/logo1.png" alt="">
+                    <p class="address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Address: C-100, Rajdhani Park, <br> Nangloi, New Delhi, 110041
+                    </p>
+                    <p>
+                        <i class="fas fa-phone"></i>
+                        Phone: <a href="">9582522758</a>
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope"></i>
+                        Email: <a href="">akashjaiswal126@gmail.com</a>
+                    </p>
+                </div>
+                <div class="col-sm ">
+                    <h3>
+                        Download Our App
+                    </h3>
+                    <p>
+                        Download App for Android and ios mobile phone
+                    </p>
+                    <img class="img-fluid applogo" src="images/play-store.png" alt="">
+                    <img class="img-fluid applogo" src="images/app-store.png" alt="">
+                    <p class="appsoon">
+                        App Coming Soon
+                    </p>
+                </div>
+                <div class="col-sm" id="menu">
+                    <h3>
+                        Menu
+                    </h3>
+                    <p>
+                        <a href="/">Home</a> <br>
+                        <a href="">About Us</a> <br>
+                        <a href="">Services</a> <br>
+                        <a href="products.html">Produsts</a> <br>
+                        <a href="">Contact</a> <br>
+                        <a href="">Cart</a> <br>
+                    </p>
+
+                </div>
+                <div class="col-sm">
+                    <h3>
+                        Opening hrs
+                    </h3>
+                    <p>Monday - Saturday: 05.00am to 09.00pm
+                        <br>
+                        Sunday: Closed
+                    </p>
+                    <h3>
+                        Social Media
+                    </h3>
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-instagram-square"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+            <div class="col-sm copyright">
+                <p>
+                    Copyright @2021 -Akash Jaiswal
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
+
+    <script>
+        $(".navbar").ripples({
+            resolution: 1000,
+            perturbance: 0.4,
+        });
+        $(".footer").ripples({
+            resolution: 1000,
+            perturbance: 0.4,
+        });
+        
+       
+    </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
